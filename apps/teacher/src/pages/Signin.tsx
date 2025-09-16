@@ -14,16 +14,28 @@ function Signin() {
         </div>
         <form className="flex flex-col gap-20">
           <div className="flex flex-col gap-2">
-            <input
-              type="text"
-              placeholder="아이디"
-              className="border border-gray-300 p-3 px-4 rounded"
-            />
-            <input
-              type="current-password"
-              placeholder="비밀번호"
-              className="border border-gray-300 p-3 px-4 rounded"
-            />
+            <div>
+              <label htmlFor="id" className="hidden">
+                아이디
+              </label>
+              <input
+                id="id"
+                type="text"
+                placeholder="아이디"
+                className="w-full border border-gray-300 p-3 px-4 rounded"
+              />
+            </div>
+            <div>
+              <label htmlFor="password" className="hidden">
+                비밀번호
+              </label>
+              <input
+                id="password"
+                type="current-password"
+                placeholder="비밀번호"
+                className="w-full border border-gray-300 p-3 px-4 rounded"
+              />
+            </div>
             <div className="flex items-center gap-2 ml-0.5">
               <label htmlFor="remember" className="font-semibold hover:cursor-pointer">
                 로그인 유지
@@ -56,7 +68,7 @@ function Signin() {
           </div>
         </div>
         <img
-          className="w-140 relative z-100 left-60 top-20"
+          className="w-[35rem] relative z-[100] left-[15rem] top-[5rem]"
           src={OneClassAppImg}
           alt="oneclass app img"
         />
