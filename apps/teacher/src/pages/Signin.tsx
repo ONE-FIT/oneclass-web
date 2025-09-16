@@ -1,7 +1,18 @@
 import OneClassAppImg from "@/assets/oneclass-app.png?url";
 import OneclassLogo from "@/assets/one-class-logo.svg?url";
+import { useForm } from "react-hook-form";
+
+interface ISignin {
+  id: string;
+  password: string;
+  remember: boolean;
+}
 
 function Signin() {
+  const { register, handleSubmit } = useForm<ISignin>();
+
+  const onSubmit = (data: ISignin) => {};
+
   return (
     <div className="grid h-screen grid-cols-7">
       <div className="flex flex-col gap-20 bg-white col-span-3 p-24 justify-center mb-20">
@@ -12,13 +23,14 @@ function Signin() {
           </div>
           <h2 className="text-5xl font-bold">Welcome!</h2>
         </div>
-        <form className="flex flex-col gap-20">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-20">
           <div className="flex flex-col gap-2">
             <div>
               <label htmlFor="id" className="hidden">
                 아이디
               </label>
               <input
+                {...register("id", { required: true })}
                 id="id"
                 type="text"
                 placeholder="아이디"
@@ -30,6 +42,7 @@ function Signin() {
                 비밀번호
               </label>
               <input
+                {...register("password", { required: true })}
                 id="password"
                 type="current-password"
                 placeholder="비밀번호"
@@ -41,6 +54,7 @@ function Signin() {
                 로그인 유지
               </label>
               <input
+                {...register("remember")}
                 className="hover:cursor-pointer"
                 type="checkbox"
                 name="remember"
