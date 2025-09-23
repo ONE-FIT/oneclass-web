@@ -1,14 +1,78 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Signin from "./pages/Signin";
+import { createBrowserRouter } from "react-router";
+import Signin from "@/pages/Signin";
+import Home from "@/pages/Home";
+import Dashboard from "@/pages/Dashboard";
+import AttendanceStatus from "@/pages/AttendanceStatus";
+import TaskStatus from "@/pages/TaskStatus";
+import TaskGenerate from "@/pages/TaskGenerate";
+import ClassManage from "@/pages/ClassManage";
+import AccountGenerate from "@/pages/AccountGenerate";
+import AnnouncementSend from "@/pages/AnnouncementSend";
+import AnnouncementManage from "@/pages/AnnouncementManage";
+import ConsultingManage from "@/pages/ConsultingManage";
+import ParentConsultingManage from "@/pages/ParentConsultingManage";
+import PaymentManage from "@/pages/PaymentManage";
+import App from "./App";
 
-export default function Router() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="signin" element={<Signin />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
-    </BrowserRouter>
-  );
-}
+const router = createBrowserRouter([
+  {
+    path: "/signin",
+    element: <Signin />,
+  },
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
+      {
+        path: "/attendance-status",
+        element: <AttendanceStatus />,
+      },
+      {
+        path: "/task-status",
+        element: <TaskStatus />,
+      },
+      {
+        path: "/task-generate",
+        element: <TaskGenerate />,
+      },
+      {
+        path: "/class-manage",
+        element: <ClassManage />,
+      },
+      {
+        path: "/account-generate",
+        element: <AccountGenerate />,
+      },
+      {
+        path: "/announcement-send",
+        element: <AnnouncementSend />,
+      },
+      {
+        path: "/announcement-manage",
+        element: <AnnouncementManage />,
+      },
+      {
+        path: "/consulting-manage",
+        element: <ConsultingManage />,
+      },
+      {
+        path: "/parent-consulting-manage",
+        element: <ParentConsultingManage />,
+      },
+      {
+        path: "/payment-manage",
+        element: <PaymentManage />,
+      },
+    ],
+  },
+]);
+
+export default router;

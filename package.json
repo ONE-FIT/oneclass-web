@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "react-hook-form": "^7.62.0",
+    "react-router": "^7.9.1",
     "vite": "^7.1.4"
   }
 }
