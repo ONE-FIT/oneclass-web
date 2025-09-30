@@ -1,8 +1,8 @@
 import {format} from "date-fns";
 import {ko} from "date-fns/locale";
 import { useState } from "react";
-import DeleteIcon from "@/assets/delete-icon.svg";
-import AddIcon from "@/assets/add.svg";
+import DeleteIcon from "@/assets/assignment/delete-icon.svg";
+import AddIcon from "@/assets/assignment/add.svg";
 
 export default function TaskGenerate() {
   const teacher:string = '김일강';
