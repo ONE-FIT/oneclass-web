@@ -1,4 +1,4 @@
-import DashboardHeader from "@/components/Dashboard/DashboardHeader";
+import PageHeader from "@/components/Common/PageHeader";
 import StatCard from "@/components/Dashboard/StatCard";
 import AnnouncementCard from "@/components/Dashboard/AnnouncementCard";
 import QuickActionButton from "@/components/Dashboard/QuickActionButton";
@@ -31,7 +31,7 @@ export default function Dashboard() {
 
   return (
     <div>
-      <DashboardHeader />
+      <PageHeader title="대시보드" />
 
       <div className="bg-blue-200 p-6 min-h-screen">
         {/* 통계 카드 2x2 그리드, 모바일은 1열 */}
