@@ -1,8 +1,7 @@
-import {format} from "date-fns";
-import {ko} from "date-fns/locale";
 import { useState } from "react";
 import DeleteIcon from "@/assets/assignment/delete-icon.svg";
 import AddIcon from "@/assets/assignment/add.svg";
+import AssignmentHeader from "@/components/assignment/AssignmentHeader";
 
 export default function TaskGenerate() {
   const teacher:string = '김일강';
@@ -42,13 +41,7 @@ export default function TaskGenerate() {
 
   return (
     <div className="bg-[hsla(211,100%,89%,1)] w-full h-screen">
-      <div className="bg-[hsla(210,87%,74%,1)] w-full h-[100px] flex items-center justify-between">
-        <h2 className="text-3xl font-bold text-white ml-[50px]">과제 생성</h2>
-        <div className="flex flex-col items-end font-semibold text-white mr-[50px]">
-          <span className="text-1xl">환영합니다 {teacher} 원장님</span>
-          <span className="text-2xl">{format(today, "yyyy년 MM월 dd일", {locale:ko})}</span>
-        </div>
-      </div>
+      <AssignmentHeader title="과제 현황" teacher={teacher} today={today}/>
       <div className="w-100% h-[calc(100vh-100px)] flex justify-center items-center flex-col">
         <div className="bg-[hsla(0,0%,100%,1)] w-[95%] h-[90%] rounded-3xl border border-[hsla(0,0%,80%,1)]">
           <div className="w-[25%] border-r border-[hsla(0,0%,80%,1)] text-center inline-block mt-[30px]">
