@@ -9,9 +9,9 @@ interface ISignin {
 }
 
 function Signin() {
-  const { register, handleSubmit } = useForm<ISignin>();
+  const { register } = useForm<ISignin>();
 
-  const onSubmit = (data: ISignin) => {};
+  // const onSubmit = (data: ISignin) => {};
 
   return (
     <div className="grid h-screen grid-cols-7">
@@ -23,7 +23,7 @@ function Signin() {
           </div>
           <h2 className="text-5xl font-bold">Welcome!</h2>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-20">
+        <form className="flex flex-col gap-20">
           <div className="flex flex-col gap-2">
             <div>
               <label htmlFor="id" className="hidden">
