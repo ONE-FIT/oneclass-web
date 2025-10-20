@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DeleteIcon from "@/assets/assignment/delete-icon.svg";
 import AddIcon from "@/assets/assignment/add.svg";
-import AssignmentHeader from "@/components/assignment/AssignmentHeader";
+import Header from "@/components/assignment/Header";
 
 export default function TaskGenerate() {
   const teacher:string = '김일강';
@@ -41,7 +41,7 @@ export default function TaskGenerate() {
 
   return (
     <div className="bg-[hsla(211,100%,89%,1)] w-full h-screen">
-      <AssignmentHeader title="과제 현황" teacher={teacher} today={today}/>
+      <Header title="과제 현황" teacher={teacher} today={today}/>
       <div className="w-100% h-[calc(100vh-100px)] flex justify-center items-center flex-col">
         <div className="bg-[hsla(0,0%,100%,1)] w-[95%] h-[90%] rounded-3xl border border-[hsla(0,0%,80%,1)]">
           <div className="w-[25%] border-r border-[hsla(0,0%,80%,1)] text-center inline-block mt-[30px]">

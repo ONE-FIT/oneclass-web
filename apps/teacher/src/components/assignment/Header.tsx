@@ -7,7 +7,7 @@ type propsType = {
     today: Date;
 }
 
-export default function AssignmentHeader({title, teacher, today}:propsType) {
+export default function Header({title, teacher, today}:propsType) {
     
     return (
         <div className="bg-[hsla(210,87%,74%,1)] w-full h-[100px] flex items-center justify-between">
