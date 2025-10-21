@@ -139,7 +139,7 @@ export default function TargetSelector({ form, isScheduled }: TargetSelectorProp
       <div className="mt-4 pt-4 border-t border-gray-200">
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white px-8 py-3 rounded-2xl font-semibold hover:bg-blue-700 transition-colors"
+          className="w-full bg-blue-600 text-white px-8 py-3 rounded-2xl font-semibold hover:bg-blue-700 hover:cursor-pointer transition-colors"
         >
           {isScheduled ? "예약 발송하기" : "지금 발송하기"}
         </button>
