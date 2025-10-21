@@ -17,7 +17,7 @@ function SignUp() {
 
   return (
     <div className="grid h-screen grid-cols-7">
-      <div className="flex flex-col gap-20 bg-white col-span-3 p-24 justify-center mb-20">
+      <div className="flex flex-col gap-12 bg-white col-span-3 p-24 justify-center">
         <div className="flex flex-col gap-6">
           <div className="flex gap-2 items-end">
             <img className="w-12" src={OneclassLogo} alt="Oneclass Logo" />

@@ -16,7 +16,7 @@ export function SignupStep1({ onSubmit, codeSent, onSendCode, isLoading }: Signu
   const name = watch("name");
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-20">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-12">
       <div className="flex flex-col gap-2">
         {/* 학원코드 */}
         <div>
