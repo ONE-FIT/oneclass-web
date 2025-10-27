@@ -21,9 +21,9 @@ export default function PaymentManage() {
     <div className="bg-[hsla(211,100%,89%,1)] w-full h-screen">
       <PageHeader title="납부 현황"/>
       <div className="w-full h-[calc(100vh-100px)] flex justify-center items-center flex-col">
-        <div className="bg-[hsla(0,0%,100%,1)] w-[95%] h-[90%] rounded-3xl border border-[hsla(0,0%,80%,1)] flex flex-col justify-center gap-7">
+        <div className="bg-[hsla(0,0%,100%,1)] w-[95%] h-[90%] rounded-3xl border border-[hsla(0,0%,80%,1)] flex flex-col justify-center">
           <div className="flex items-center justify-evenly ">
-            <div className="w-[300px] h-[300px]">
+            <div className="w-[300px] h-[350px]">
               <PieChart data={sample} height={350} />
             </div>
             <div className="border rounded-xl border-[#CDCDCD]">

@@ -3,7 +3,6 @@ import {
     Pie,
     Cell,
     Tooltip,
-    Legend,
     ResponsiveContainer,
   } from "recharts";
   
@@ -52,13 +51,6 @@ import {
   };
   
   export default function PieChart({ data, height = 300 }: Props) {
-    const total = data.reduce((s, d) => s + d.value, 0);
-  
-    const labelFormatter = (entry: any) => {
-      if (!total) return "0%";
-      const pct = (entry.value / total) * 100;
-      return `${pct.toFixed(1)}%`;
-    };
   
     return (
       <div style={{ width: "100%", height }}>
