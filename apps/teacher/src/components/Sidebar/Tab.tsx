@@ -8,7 +8,7 @@ export default function TabLink({ item }: { item: (typeof tabList)[0] }) {
   return (
     <Link
       className={`
-          flex items-center justify-start gap-[0.875rem] py-4 px-6 no-underline
+          flex items-center justify-start gap-3 py-3 px-6 no-underline
           transition-all duration-200 ease-in-out
           ${isActive ? "text-white bg-[#0257A3]" : "text-white bg-transparent"}
           hover:bg-[#0257A3] hover:text-white hover:cursor-pointer

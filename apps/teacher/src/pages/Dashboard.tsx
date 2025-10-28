@@ -30,10 +30,10 @@ export default function Dashboard() {
   ];
 
   return (
-    <div>
+    <div className="h-screen flex flex-col overflow-hidden">
       <PageHeader title="대시보드" />
 
-      <div className="bg-blue-200 p-6 min-h-screen">
+      <div className="bg-blue-200 p-6 flex-1 overflow-hidden">
         {/* 통계 카드 2x2 그리드, 모바일은 1열 */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <StatCard
