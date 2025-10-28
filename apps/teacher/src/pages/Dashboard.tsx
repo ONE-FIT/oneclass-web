@@ -30,12 +30,12 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="h-screen flex flex-col overflow-hidden">
+    <div className="flex flex-col h-screen overflow-hidden">
       <PageHeader title="대시보드" />
 
-      <div className="bg-blue-200 p-6 flex-1 overflow-hidden">
+      <div className="flex-1 p-6 overflow-hidden bg-blue-200">
         {/* 통계 카드 2x2 그리드, 모바일은 1열 */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 gap-6 mb-8 lg:grid-cols-2">
           <StatCard
             title="출석 현황"
             items={attendanceItems}
@@ -73,7 +73,7 @@ export default function Dashboard() {
           <AnnouncementCard announcements={mockAnnouncements} />
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
           {quickActions.map(action => (
             <QuickActionButton
               key={action.id}

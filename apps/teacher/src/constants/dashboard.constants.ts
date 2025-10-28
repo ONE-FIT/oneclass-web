@@ -80,12 +80,6 @@ export const mockAnnouncements: AnnouncementItem[] = [
 
 export const quickActions: QuickActionItem[] = [
   {
-    id: "attendance",
-    title: "출석 현황",
-    icon: "attendance-status",
-    route: "/attendance-status",
-  },
-  {
     id: "payment",
     title: "납부 현황",
     icon: "payment-status",

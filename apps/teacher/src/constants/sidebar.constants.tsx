@@ -1,6 +1,5 @@
 import type { ReactElement } from "react";
 import DashboardIcon from "@/assets/sidebar/dashboard.svg";
-import AttendanceStatusIcon from "@/assets/sidebar/attendance-status.svg";
 import TaskTtatusIcon from "@/assets/sidebar/task-status.svg";
 import TaskGenerateIcon from "@/assets/sidebar/task-generate.svg";
 import AccountGenerateIcon from "@/assets/sidebar/account-generate.svg";
@@ -21,13 +20,6 @@ interface TabItem {
 
 export const tabList: TabItem[] = [
   { id: "dashboard", name: "대시보드", icon: <DashboardIcon />, to: "/dashboard", section: "main" },
-  {
-    id: "attendance",
-    name: "출석 현황",
-    icon: <AttendanceStatusIcon />,
-    to: "/attendance-status",
-    section: "student-manage",
-  },
   {
     id: "task-status",
     name: "과제 현황",

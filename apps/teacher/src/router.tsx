@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router";
 import Signin from "@/pages/Signin";
 import Home from "@/pages/Home";
 import Dashboard from "@/pages/Dashboard";
-import AttendanceStatus from "@/pages/AttendanceStatus";
 import TaskStatus from "@/pages/TaskStatus";
 import TaskGenerate from "@/pages/TaskGenerate";
 import ClassManage from "@/pages/ClassManage";
@@ -35,10 +34,6 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
-      },
-      {
-        path: "/attendance-status",
-        element: <AttendanceStatus />,
       },
       {
         path: "/task-status",
