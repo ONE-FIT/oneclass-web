@@ -13,11 +13,16 @@ import ConsultingManage from "@/pages/ConsultingManage";
 import ParentConsultingManage from "@/pages/ParentConsultingManage";
 import PaymentManage from "@/pages/PaymentManage";
 import App from "./App";
+import SignUp from "@/pages/Signup.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/signin",
     element: <Signin />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp/>
   },
   {
     path: "/",

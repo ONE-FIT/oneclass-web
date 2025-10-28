@@ -9,9 +9,9 @@ interface ISignin {
 }
 
 function Signin() {
-  const { register, handleSubmit } = useForm<ISignin>();
+  const { register } = useForm<ISignin>();
 
-  const onSubmit = (data: ISignin) => {};
+  // const onSubmit = (data: ISignin) => {};
 
   return (
     <div className="grid h-screen grid-cols-7">
@@ -23,7 +23,7 @@ function Signin() {
           </div>
           <h2 className="text-5xl font-bold">Welcome!</h2>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-20">
+        <form className="flex flex-col gap-20">
           <div className="flex flex-col gap-2">
             <div>
               <label htmlFor="id" className="hidden">
@@ -44,7 +44,7 @@ function Signin() {
               <input
                 {...register("password", { required: true })}
                 id="password"
-                type="current-password"
+                type="password"
                 placeholder="비밀번호"
                 className="w-full border border-gray-300 p-3 px-4 rounded"
               />
@@ -72,7 +72,7 @@ function Signin() {
       </div>
       <div className="bg-[#D8EAFC] col-span-4 h-screen">
         <div className="flex flex-col gap-8 px-24 justify-center">
-          <h1 className="text-7xl font-bold mt-68">학원관리</h1>
+          <h1 className="text-7xl font-bold mt-38">학원관리</h1>
           <div className="flex flex-col gap-4">
             <h3 className="text-2xl font-semibold">
               OneClass는 학생과 학원을 이어주는 <br />
@@ -82,7 +82,7 @@ function Signin() {
           </div>
         </div>
         <img
-          className="w-[35rem] relative z-[100] left-[15rem] top-[5rem]"
+          className="w-[35rem] relative z-[100] left-[15rem] top-0"
           src={OneClassAppImg}
           alt="oneclass app img"
         />
