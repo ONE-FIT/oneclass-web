@@ -34,20 +34,20 @@ export default function ParantConsultingManage() {
           </div>
           <div className="flex flex-col w-[65%] items-center">
             <h2 className="bg-blue-300 text-white w-[90%] h-[50px] text-2xl font-semibold text-center leading-[50px] rounded-2xl mt-[30px]">상담 내용</h2>
-            <div className="w-[90%] h-[80%] mt-[30px] border rounded-xl flex flex-col items-center border-[#0257A3]">
+            <div className="w-[90%] h-[80%] mt-[30px] border rounded-xl flex flex-col items-center border-[#0257A3] overflow-hidden">
               <div className="flex w-[90%] mt-[20px] justify-between items-center">
                 <h2 className="text-xl">제목 : {selected?.title}</h2>
                 <small className="bg-[hsla(211,100%,89%,1)] border text-[#00162E] border-blue-300 font-semibold w-[130px] text-center h-[25px] leading-[25px] rounded-md">{selected?.parent} 학생 학부모</small>
               </div>
-              <div className="border w-[90%] h-[33%] mt-[20px] rounded-xl border-[#0257A3] pl-[15px] pr-[15px]">
+              <div className="border w-[90%] flex-1 mt-[20px] rounded-xl border-[#0257A3] pl-[15px] pr-[15px] flex flex-col overflow-hidden">
                 <h2 className="font-semibold h-[50px] flex items-center text-xl border-b-2 border-[#0257A3]">내용</h2>
-                <textarea className="w-full h-[40%] resize-none mt-[5px] focus:outline-none" value={selected?.content} readOnly/>
+                <textarea className="flex-1 resize-none mt-[5px] focus:outline-none pb-[15px]" value={selected?.content} readOnly/>
               </div>
-              <div className="border w-[90%] h-[33%] mt-[20px] rounded-xl border-[#0257A3] pl-[15px] pr-[15px]">
+              <div className="border w-[90%] flex-1 mt-[20px] rounded-xl border-[#0257A3] pl-[15px] pr-[15px] flex flex-col overflow-hidden">
                 <h2 className="font-semibold h-[50px] flex items-center text-xl border-b-2 border-[#0257A3]">메세지</h2>
-                <textarea className="w-full h-[55%] resize-none mt-[5px] focus:outline-none" placeholder="보낼 메세지를 입력하세요."/>
+                <textarea className="flex-1 resize-none mt-[5px] focus:outline-none pb-[15px]" placeholder="보낼 메세지를 입력하세요."/>
               </div>
-              <button className="border w-[140px] h-[40px] rounded-xl mt-[20px] self-end mr-[5%] border-blue-300 text-white bg-blue-300 font-semibold">메세지 전송</button>
+              <button className="border w-[140px] h-[40px] rounded-xl mt-[20px] mb-[20px] self-end mr-[5%] border-blue-300 text-white bg-blue-300 font-semibold">메세지 전송</button>
             </div>
           </div>
         </div>
