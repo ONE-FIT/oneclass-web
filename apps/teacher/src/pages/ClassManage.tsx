@@ -1,5 +1,6 @@
 import PageHeader from "@/components/Common/PageHeader";
 import { useState } from "react";
+import ClassGenerateModal from "@/components/classManage/classGenerateModal";
 
 type DummyType = {
   class: string;
@@ -11,6 +12,11 @@ export default function ClassManage() {
   const [mode, setMode] = useState<string>("반")
   const [selected, setSelected] = useState<null|DummyType>(null);
   const [isEdit, setIsEdit] = useState<boolean>(false);
+  const [modalShow, setModalShow] = useState<boolean>(false);
+
+  if (modalShow === true) {
+    document.body.style.overflow = 'hidden';
+  }
   
   return (
       <div className="bg-[hsla(211,100%,89%,1)] w-full h-screen">
@@ -39,7 +45,7 @@ export default function ClassManage() {
                 <div className=" w-[80%] mt-[30px] h-[35%] flex flex-col">
                   <h3 className="text-2xl font-semibold ml-[10px] mb-[5px]">비고</h3>
                   <textarea className="w-full h-full p-[10px] bg-white resize-none focus:outline-none rounded" readOnly={isEdit === false} defaultValue={selected?.description}/>
-                  <button className="bg-[#0257A3] text-white text-sm w-[80px] h-[30px] rounded-3xl mt-[10px] self-end shrink-0 cursor-pointer" onClick={() => setIsEdit(!isEdit)}>{isEdit === false ? "수정" : "완료"}</button>
+                  <button className="bg-blue-600 text-white text-sm w-[80px] h-[30px] rounded-3xl mt-[10px] self-end shrink-0 cursor-pointer hover:bg-blue-700" onClick={() => setIsEdit(!isEdit)}>{isEdit === false ? "수정" : "완료"}</button>
                 </div>
                 <div className="w-[80%] mt-[30px] h-[30%] flex flex-col">
                   <h3 className="text-2xl font-semibold ml-[10px] mb-[10px]">소속 학생</h3>
@@ -50,10 +56,14 @@ export default function ClassManage() {
                   </div>
                 </div>
               </div>
-              <button className="text-xl font-semibold text-white bg-blue-300 rounded-2xl w-[80%] h-[50px] self-center justify-self-end hover:bg-[hsl(210,91.30%,68.40%)] cursor-pointer">추가하기</button>
+              <button className="text-xl font-semibold text-white bg-blue-300 rounded-2xl w-[80%] h-[50px] self-center justify-self-end hover:bg-[hsl(210,91.30%,68.40%)] cursor-pointer" onClick={() => setModalShow(true)}>추가하기</button>
             </div>
           </div>
         </div>
+        {modalShow && 
+          <ClassGenerateModal
+            setModalShow={setModalShow}
+        />}
       </div>
   );
 }

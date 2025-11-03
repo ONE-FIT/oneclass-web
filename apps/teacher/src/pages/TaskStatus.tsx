@@ -1,4 +1,4 @@
-import Header from "@/components/assignment/Header";
+import PageHeader from "@/components/Common/PageHeader";
 import Filter from "@/components/assignment/Filter";
 import BackIcon from "@/assets/assignment/backIcon.svg";
 import { useState } from "react";
@@ -20,9 +20,6 @@ type assItem = {
 }
 
 export default function TaskStatus() {
-  const teacher:string = '김일강';
-  const today:Date = new Date()
-
   const [filter, setFilter] = useState<filterType>({
     sortOrder: "asc",       
     timeOrder: "recent",       
@@ -40,7 +37,7 @@ export default function TaskStatus() {
 
   return (
     <div className="bg-[hsla(211,100%,89%,1)] w-full h-screen">
-      <Header title="과제 현황" teacher={teacher} today={today}/>
+      <PageHeader title="과제 현황"/>
       <div className="w-full h-[calc(100vh-100px)] flex justify-center items-center flex-col">
         <div className="bg-[hsla(0,0%,100%,1)] w-[95%] h-[90%] rounded-3xl border border-[hsla(0,0%,80%,1)] flex flex-col">
           {!showDetail ?
