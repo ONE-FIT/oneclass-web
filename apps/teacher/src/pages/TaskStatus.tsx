@@ -80,7 +80,7 @@ export default function TaskStatus() {
                 <h2>제출여부 : {selectedItem?.submitted === true ? "제출" : "미제출"}</h2>
               </div>
               <textarea className="border resize-none w-[90%] h-[40%] self-center rounded p-5" value={selectedItem?.content}></textarea>
-              <button className="bg-[#E64650] w-[180px] h-[50px] rounded-md text-white self-end mr-[5%] mt-auto mb-[30px]">과제 삭제</button>
+              <button className="bg-red-400 w-[180px] h-[50px] rounded-md text-white self-end mr-[5%] mt-auto mb-[30px] hover:bg-red-500 cursor-pointer">과제 삭제</button>
             </> }
         </div>
       </div>

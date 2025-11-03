@@ -57,7 +57,7 @@ export default function TaskStatus() {
                 <h2 className="font-semibold h-[50px] flex items-center text-xl border-b-2 border-[#0257A3]">메세지</h2>
                 <textarea className="flex-1 resize-none mt-[5px] focus:outline-none" placeholder="보낼 메세지를 입력하세요."/>
               </div>
-              <button className="border w-[140px] h-[40px] rounded-xl mt-[20px] mb-[20px] self-end mr-[5%] border-[hsla(211,100%,89%,1)] text-white bg-blue-300 font-semibold">메세지 전송</button>
+              <button className="border w-[140px] h-[40px] rounded-xl mt-[20px] mb-[20px] self-end mr-[5%] border-[hsla(211,100%,89%,1)] text-white bg-blue-300 font-semibold hover:bg-[hsl(210,91.30%,68.40%)] cursor-pointer">메세지 전송</button>
             </div>
           </div>
         </div>

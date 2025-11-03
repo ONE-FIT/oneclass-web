@@ -151,7 +151,7 @@ export default function TaskGenerate() {
                   <h4 className="text-sm font-semibold text-center">{startDate.split("-").join(".")}<br/>{startTime}<br/>~<br/>{endDate.split("-").join(".")}<br/>{endTime}</h4>
                 </div>
               </div>
-              <button className="border border-[hsla(210,87%,74%,1)] rounded-2xl mt-[10px] w-[80%] h-[40px] bg-[hsla(210,87%,74%,1)] text-white cursor-pointer hover:bg-[hsl(210,89.90%,72.70%)]">과제 생성</button>
+              <button className="border border-[hsla(210,87%,74%,1)] rounded-2xl mt-[10px] w-[80%] h-[40px] bg-[hsla(210,87%,74%,1)] text-white cursor-pointer hover:bg-[hsl(210,91.30%,68.40%)]">과제 생성</button>
             </div>
           </div>
         </div>
