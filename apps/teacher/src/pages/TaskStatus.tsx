@@ -1,7 +1,7 @@
 import PageHeader from "@/components/Common/PageHeader";
 import Filter from "@/components/assignment/Filter";
 import { useState } from "react";
-import DetailTaskModal from "@/components/assignment/detailTaskModal";
+import DetailTaskModal from "@/components/assignment/DetailTaskModal";
 
 type filterType = {
   sortOrder: string;      

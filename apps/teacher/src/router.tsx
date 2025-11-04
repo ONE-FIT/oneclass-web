@@ -13,6 +13,7 @@ import ParentConsultingManage from "@/pages/ParentConsultingManage";
 import PaymentManage from "@/pages/PaymentManage";
 import App from "./App";
 import SignUp from "@/pages/Signup.tsx";
+import AttendanceStatus from "@/pages/AttendanceStatus";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "/attendance-status",
+        element: <AttendanceStatus />,
       },
       {
         path: "/task-status",
