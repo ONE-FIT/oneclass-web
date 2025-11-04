@@ -1,7 +1,7 @@
 import PageHeader from "@/components/Common/PageHeader";
 import Filter from "@/components/assignment/Filter";
-import BackIcon from "@/assets/assignment/backIcon.svg";
 import { useState } from "react";
+import DetailTaskModal from "@/components/assignment/detailTaskModal";
 
 type filterType = {
   sortOrder: string;      
@@ -9,7 +9,7 @@ type filterType = {
   submissionStatus: string;
 }
 
-type assItem = {
+export type assItem = {
   id: number,
   startDate: string,
   dueDate: string,
@@ -30,57 +30,42 @@ export default function TaskStatus() {
   const [selectedItem, setSelectedItem] = useState<null|assItem>(null);
 
   const handleClick = (id:number) => {
-    setShowDetail(!showDetail);
+    setShowDetail(true);
     const item = dummy.find(item => item.id === id) || null;
     setSelectedItem(item);
+  }
+
+  if (showDetail === true) {
+    document.body.style.overflow = 'hidden';
   }
 
   return (
     <div className="bg-[hsla(211,100%,89%,1)] w-full h-screen">
       <PageHeader title="과제 현황"/>
       <div className="w-full h-[calc(100vh-100px)] flex justify-center items-center flex-col">
-        <div className="bg-[hsla(0,0%,100%,1)] w-[95%] h-[90%] rounded-3xl border border-[hsla(0,0%,80%,1)] flex flex-col">
-          {!showDetail ?
-            <div className="h-[100%] w-[100%]">
-              <div className="w-full border-b h-[100px] border-[hsla(0,0%,80%,1)]">
-                <Filter filter={filter} setFilter={setFilter}/>
-              </div>
-              <ul className="flex text-[25px] font-semibold justify-between ml-[7%] mr-[5%] mt-[15px]">
-                  <li>날짜</li>
-                  <li>제목</li>
-                  <li>학생</li>
-                  <li>제출 여부</li>
-                </ul>
-              <div className="flex flex-col items-center mt-[10px] w-full h-[77%]">
-                <div className="w-[90%] h-[90%] overflow-y-scroll">
-                  {dummy.map(item => (
-                    <div className="relative flex items-center w-full border h-[60px] rounded-[10px] border-[hsla(0,0%,80%,1)] mb-[10px] border-2 text-[17px] font-semibold cursor-pointer" onClick={() => handleClick(item.id)}>
-                      <h4 className="absolute left-[30px]">{item.dueDate.split("-").join(".")}</h4>
-                      <h4 className="absolute left-[30%]">{item.title}</h4>
-                      <h4 className="absolute right-[34%]">{item.student}</h4>
-                      <h4 className="absolute right-[30px]">{item.submitted === true ? "제출" : "미제출"}</h4>
-                    </div>
-                  ))}
-                </div>
-              </div> 
-            </div> :
-            <>
-              <div className="w-full border-b h-[80px] border-[hsla(0,0%,80%,1)] flex items-center">
-                <div className="ml-8 cursor-pointer" onClick={() => setShowDetail(!showDetail)}>
-                  <BackIcon width="20" height="auto"/>
-                </div>
-                <h2 className="ml-5 text-2xl font-semibold">{selectedItem?.title}</h2>
-                <h2 className="ml-auto mr-10 text-2xl font-semibold">{selectedItem?.student} 학생</h2>
-              </div>
-              <div className="flex items-center h-20 text-2xl font-semibold justify-evenly">
-                <h2>{selectedItem?.startDate.split("-").join(".")} ~ {selectedItem?.dueDate.split("-").join(".")}</h2>
-                <h2>제출여부 : {selectedItem?.submitted === true ? "제출" : "미제출"}</h2>
-              </div>
-              <textarea className="border resize-none w-[90%] h-[40%] self-center rounded p-5" value={selectedItem?.content}></textarea>
-              <button className="bg-red-400 w-[180px] h-[50px] rounded-md text-white self-end mr-[5%] mt-auto mb-[30px] hover:bg-red-500 cursor-pointer">과제 삭제</button>
-            </> }
+        <div className="w-[95%] h-[90%] rounded-3xl flex flex-col">
+            <div className="flex flex-col w-full h-full gap-5">
+              <Filter filter={filter} setFilter={setFilter}/>
+                <div className="flex flex-col items-center mt-[10px] w-full h-[80%]">
+                  <div className="w-full h-full overflow-y-scroll">
+                    {dummy.map(item => (
+                      <div className="relative flex items-center w-full h-[60px] rounded-[10px] mb-[10px] text-[17px] font-semibold cursor-pointer bg-white" onClick={() => handleClick(item.id)}>
+                        <h4 className="absolute left-[30px]">{item.dueDate.split("-").join(".")}</h4>
+                        <h4 className="absolute left-[30%]">{item.title}</h4>
+                        <h4 className="absolute right-[34%]">{item.student}</h4>
+                        <h4 className="absolute right-[30px]">{item.submitted === true ? "제출" : "미제출"}</h4>
+                      </div>
+                    ))}
+                  </div>
+                </div> 
+            </div>
         </div>
       </div>
+      {showDetail &&
+        <DetailTaskModal
+          selectedItem={selectedItem}
+          setShowDetail={setShowDetail}
+        />}
     </div>
   );
 }

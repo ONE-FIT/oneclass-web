@@ -49,7 +49,7 @@ export default function PaymentManage() {
                   onClick={() => setSendAlert(!sendAlert)}
                   className={`
                     w-14 h-8 flex items-center rounded-full p-1 cursor-pointer transition-colors duration-300
-                    ${sendAlert ? "bg-blue-300" : "bg-blue-100"}
+                    ${sendAlert ? "bg-blue-400" : "bg-blue-200"}
                   `}
                 >
                 <div
@@ -65,7 +65,7 @@ export default function PaymentManage() {
             <div className="w-[95%] h-[60%] self-center overflow-y-scroll">
               <div className="flex items-center justify-evenly mb-[10px]">
                 <div className="w-[85%] h-[50px] bg-gray-100 rounded-lg flex items-center pl-[20px] text-xl font-semibol">김일강 학생</div>
-                <button className="w-[10%] h-[50px] bg-red-400 rounded-lg text-white cursor-pointer hover:bg-red-500">알림 발송</button>
+                <button className="w-[10%] h-[50px] bg-red-500 rounded-lg text-white cursor-pointer hover:bg-red-600">알림 발송</button>
               </div>
             </div>
           </div>

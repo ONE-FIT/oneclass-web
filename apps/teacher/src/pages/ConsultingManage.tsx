@@ -21,13 +21,13 @@ export default function TaskStatus() {
       <div className="w-full h-[calc(100vh-100px)] flex justify-center items-center flex-col">
         <div className="bg-[hsla(0,0%,100%,1)] w-[95%] h-[90%] rounded-3xl border border-[hsla(0,0%,80%,1)] flex justify-center">
           <div className="flex flex-col w-[30%] items-center">
-            <h2 className="bg-blue-300 text-white w-[90%] h-[50px] text-2xl font-semibold text-center leading-[50px] rounded-2xl mt-[30px]">신규 상담 {dummy.length}건</h2>
+            <h2 className="bg-blue-500 text-white w-[90%] h-[50px] text-2xl font-semibold text-center leading-[50px] rounded-2xl mt-[30px]">신규 상담 {dummy.length}건</h2>
             <div className="w-[90%] h-[80%] mt-[30px] overflow-y-scroll [&::-webkit-scrollbar]:hidden">
               {dummy.map(item => 
                 <div 
                   key={item.id}
                   className={`w-full h-[50px] border mb-5 border-[#0257A3] rounded-md flex justify-center items-center cursor-pointer pl-[10px] pr-[10px] box-border transition-colors ${
-                    selected?.id === item.id ? 'bg-[hsla(211,100%,89%,1)] text-[#00162E] border-blue-300 font-semibold' : 'bg-white text-black'
+                    selected?.id === item.id ? 'bg-blue-400 border-blue-400 text-white font-semibold' : 'bg-white text-black'
                   }`}
                   onClick={() => setSelected(item)}
                 >
@@ -37,13 +37,13 @@ export default function TaskStatus() {
             </div>
           </div>
           <div className="flex flex-col w-[65%] items-center">
-            <h2 className="bg-blue-300 text-white w-[90%] h-[50px] text-2xl font-semibold text-center leading-[50px] rounded-2xl mt-[30px]">상담 내용</h2>
-            <div className="w-[90%] h-[80%] mt-[30px] border rounded-xl flex flex-col items-center border-[#0257A3] overflow-hidden">
-              <h2 className="w-[90%] text-xl mt-[20px]">제목 : {selected?.title}</h2>
-              <div className="border w-[90%] flex-1 mt-[20px] rounded-xl border-[#0257A3] pl-[15px] pr-[15px] flex flex-col overflow-hidden">
-                <h2 className="font-semibold h-[50px] flex items-center text-xl border-b-2 border-[#0257A3]">내용</h2>
+            <h2 className="bg-blue-500 text-white w-[90%] h-[50px] text-2xl font-semibold text-center leading-[50px] rounded-2xl mt-[30px]">상담 내용</h2>
+            <div className="w-[90%] h-[80%] mt-[30px] rounded-xl flex flex-col items-center overflow-hidden bg-blue-50">
+              <h2 className="flex w-[90%] mt-[20px] h-[40px] pl-[20px] pr-[20px] rounded-xl justify-between items-center bg-white text-xl">제목 : {selected?.title}</h2>
+              <div className="w-[90%] flex-1 mt-[20px] rounded-xl border-[#0257A3] pl-[15px] pr-[15px] flex flex-col overflow-hidden bg-white">
+                <h2 className="font-semibold h-[50px] flex items-center text-xl border-b-2 border-gray-300">내용</h2>
                 <textarea className="flex-1 resize-none mt-[5px] focus:outline-none" value={selected?.content} readOnly/>
-                <div className="border w-full h-[25px] rounded border-[#0257A3] flex items-center mb-[10px]">
+                <div className="w-full h-[25px] rounded flex items-center mb-[10px] bg-gray-100">
                   <ul className="flex w-full justify-evenly">
                     <li><small>이름 : {selected?.name}</small></li>
                     <li><small>성별 : {selected?.gender}</small></li>
@@ -53,11 +53,11 @@ export default function TaskStatus() {
                   </ul>
                 </div>
               </div>
-              <div className="border w-[90%] flex-1 mt-[20px] rounded-xl border-[#0257A3] pl-[15px] pr-[15px] flex flex-col overflow-hidden">
-                <h2 className="font-semibold h-[50px] flex items-center text-xl border-b-2 border-[#0257A3]">메세지</h2>
+              <div className="w-[90%] flex-1 mt-[20px] rounded-xl pl-[15px] pr-[15px] flex flex-col overflow-hidden bg-white">
+                <h2 className="font-semibold h-[50px] flex items-center text-xl border-b-2 border-gray-300">메세지</h2>
                 <textarea className="flex-1 resize-none mt-[5px] focus:outline-none" placeholder="보낼 메세지를 입력하세요."/>
               </div>
-              <button className="border w-[140px] h-[40px] rounded-xl mt-[20px] mb-[20px] self-end mr-[5%] border-[hsla(211,100%,89%,1)] text-white bg-blue-300 font-semibold hover:bg-[hsl(210,91.30%,68.40%)] cursor-pointer">메세지 전송</button>
+              <button className="w-[140px] h-[40px] rounded-xl mt-[20px] mb-[20px] self-end mr-[5%] text-white bg-blue-600 font-semibold hover:bg-blue-700 cursor-pointer">메세지 전송</button>
             </div>
           </div>
         </div>

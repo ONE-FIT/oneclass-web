@@ -20,12 +20,12 @@ export default function ClassManage() {
   
   return (
       <div className="bg-[hsla(211,100%,89%,1)] w-full h-screen">
-        <PageHeader title="납부 현황"/>
+        <PageHeader title="클래스 설정"/>
         <div className="w-full h-[calc(100vh-100px)] flex justify-center items-center flex-col">
           <div className="bg-[hsla(0,0%,100%,1)] w-[95%] h-[90%] rounded-3xl border border-[hsla(0,0%,80%,1)] flex flex-col">
             <div className="h-[80px]  border-b border-[hsla(0,0%,80%,1)] flex justify-center items-center gap-5 text-2xl font-semibold">
-              <span onClick={() => setMode("반")} className={mode === "반" ? "border-b-3 border-blue-300" : ""}>반</span>
-              <span onClick={() => setMode("과목")} className={mode === "과목" ? "border-b-3 border-blue-300" : ""}>과목</span>
+              <span onClick={() => setMode("반")} className={`cursor-pointer ${mode === "반" ? "border-b-3 border-blue-500" : ""}`}>반</span>
+              <span onClick={() => setMode("과목")} className={`cursor-pointer ${mode === "과목" ? "border-b-3 border-blue-500" : ""}`}>과목</span>
             </div>
             <div className="flex-1 p-5 grid grid-cols-[300px_1fr] grid-rows-[1fr_60px] gap-y-5 overflow-hidden">
               <div className="overflow-y-auto bg-white rounded [&::-webkit-scrollbar]:hidden">
@@ -34,13 +34,13 @@ export default function ClassManage() {
                     <div key={room.class} 
                       onClick={() => setSelected(room)}
                       className={`w-[80%] h-[50px] border mb-5 border-[#0257A3] rounded-md flex justify-center items-center cursor-pointer pl-[10px] pr-[10px] box-border transition-colors ${
-                        selected?.class === room.class ? 'bg-[hsla(211,100%,89%,1)] text-[#00162E] border-blue-300 font-semibold' : 'bg-white text-black'
+                        selected?.class === room.class ? 'bg-blue-500 text-white border-blue-300 font-semibold' : 'bg-white text-black'
                       }`}
                     >{room.class}</div>
                   ))}
                 </div>
               </div>
-              <div className="row-span-2 bg-[hsla(211,100%,89%,1)] w-[90%] justify-self-center flex flex-col items-center rounded-2xl">
+              <div className="row-span-2 bg-blue-50 w-[90%] justify-self-center flex flex-col items-center rounded-2xl">
                 <div className="bg-white h-[50px] mt-[30px] w-[80%] text-2xl font-semibold flex items-center justify-center rounded-2xl">1반</div>
                 <div className=" w-[80%] mt-[30px] h-[35%] flex flex-col">
                   <h3 className="text-2xl font-semibold ml-[10px] mb-[5px]">비고</h3>
@@ -56,7 +56,7 @@ export default function ClassManage() {
                   </div>
                 </div>
               </div>
-              <button className="text-xl font-semibold text-white bg-blue-300 rounded-2xl w-[80%] h-[50px] self-center justify-self-end hover:bg-[hsl(210,91.30%,68.40%)] cursor-pointer" onClick={() => setModalShow(true)}>추가하기</button>
+              <button className="text-xl font-semibold text-white bg-blue-600 rounded-2xl w-[80%] h-[50px] self-center justify-self-end hover:bg-blue-700 cursor-pointer" onClick={() => setModalShow(true)}>추가하기</button>
             </div>
           </div>
         </div>
