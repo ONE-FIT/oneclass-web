@@ -1,7 +1,7 @@
 import PageHeader from "@/components/Common/PageHeader";
 import Filter from "@/components/assignment/Filter";
 import { useState } from "react";
-import DetailTaskModal from "@/components/assignment/detailTaskModal";
+import DetailTaskModal from "@/components/assignment/DetailTaskModal";
 
 type filterType = {
   sortOrder: string;      
@@ -51,9 +51,8 @@ export default function TaskStatus() {
                     {dummy.map(item => (
                       <div className="relative flex items-center w-full h-[60px] rounded-[10px] mb-[10px] text-[17px] font-semibold cursor-pointer bg-white" onClick={() => handleClick(item.id)}>
                         <h4 className="absolute left-[30px]">{item.dueDate.split("-").join(".")}</h4>
-                        <h4 className="absolute left-[30%]">{item.title}</h4>
-                        <h4 className="absolute right-[34%]">{item.student}</h4>
-                        <h4 className="absolute right-[30px]">{item.submitted === true ? "제출" : "미제출"}</h4>
+                        <h4 className="absolute left-[45%]">{item.title}</h4>
+                        <h4 className="absolute right-[30px]">{item.student}</h4>
                       </div>
                     ))}
                   </div>

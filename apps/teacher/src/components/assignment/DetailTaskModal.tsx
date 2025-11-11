@@ -31,19 +31,10 @@ export default function DetailTaskModal({ selectedItem, setShowDetail }: taskPro
                         </div>
                     </div>
         
-                    <div className="grid grid-cols-2 gap-4">
-                        <div>
-                            <h3 className="mb-2 text-sm font-semibold text-gray-700">제출 여부</h3>
-                            <div className="p-4 text-gray-700 bg-gray-50 rounded-xl">
-                                {selectedItem?.submitted === true ? "제출" : "미제출"}
-                            </div>
-                        </div>
-            
-                        <div>
-                            <h3 className="mb-2 text-sm font-semibold text-gray-700">학생</h3>
-                            <div className="p-4 text-gray-700 bg-gray-50 rounded-xl">
-                                {selectedItem?.student}
-                            </div>
+                    <div>
+                        <h3 className="mb-2 text-sm font-semibold text-gray-700">학생</h3>
+                        <div className="p-4 text-gray-700 bg-gray-50 rounded-xl">
+                            {selectedItem?.student}
                         </div>
                     </div>
         

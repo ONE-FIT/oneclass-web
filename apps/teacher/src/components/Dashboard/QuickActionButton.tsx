@@ -31,7 +31,7 @@ export default function QuickActionButton({ title, icon, route }: QuickActionBut
       onClick={handleClick}
       className="flex flex-col items-center justify-center h-48 p-8 text-center bg-white rounded-2xl group"
     >
-      <div className="flex items-center justify-center h-12 mb-4 bg-blue-100 cursor-pointer w-12 rounded-2xl">
+      <div className="flex items-center justify-center w-12 h-12 mb-4 bg-blue-100 cursor-pointer rounded-2xl">
         <IconComponent className="w-6 h-6 text-blue-600" />
       </div>
       <div className="text-lg font-semibold text-gray-800">{title}</div>
