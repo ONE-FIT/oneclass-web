@@ -10,6 +10,7 @@ type DummyType = {
     "age": number,
     "phone": string,
     "subject": string,
+    "date" : string,
 };
 
 export default function TaskStatus() {
@@ -41,7 +42,17 @@ export default function TaskStatus() {
             <div className="w-[90%] h-[80%] mt-[30px] rounded-xl flex flex-col items-center overflow-hidden bg-blue-50">
               <h2 className="flex w-[90%] mt-[20px] h-[40px] pl-[20px] pr-[20px] rounded-xl justify-between items-center bg-white text-xl">제목 : {selected?.title}</h2>
               <div className="w-[90%] flex-1 mt-[20px] rounded-xl border-[#0257A3] pl-[15px] pr-[15px] flex flex-col overflow-hidden bg-white">
-                <h2 className="font-semibold h-[50px] flex items-center text-xl border-b-2 border-gray-300">내용</h2>
+                <h2 className="font-semibold h-[50px] flex items-center justify-between text-xl border-b-2 border-gray-300">
+                  내용
+                  <small>희망 일자 : {selected ? new Date(selected.date).toLocaleString('ko-KR', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                  }) : ""}
+                  </small>
+                </h2>
                 <textarea className="flex-1 resize-none mt-[5px] focus:outline-none" value={selected?.content} readOnly/>
                 <div className="w-full h-[25px] rounded flex items-center mb-[10px] bg-gray-100">
                   <ul className="flex w-full justify-evenly">
@@ -54,10 +65,19 @@ export default function TaskStatus() {
                 </div>
               </div>
               <div className="w-[90%] flex-1 mt-[20px] rounded-xl pl-[15px] pr-[15px] flex flex-col overflow-hidden bg-white">
-                <h2 className="font-semibold h-[50px] flex items-center text-xl border-b-2 border-gray-300">메세지</h2>
+                <h2 className="font-semibold h-[50px] flex items-center text-xl border-b-2 border-gray-300 justify-between">
+                  메세지
+                  <div className="bg-gray-100 pr-[10px] pl-[10px] rounded-xl flex items-center h-[25px] gap-7">
+                    <input type="date" className="text-sm w-[110px]" defaultValue={selected ? new Date(selected.date).toISOString().split('T')[0] : ""}/>
+                    <input type="time" className="text-sm w-[100px]" defaultValue={selected ? `${new Date(selected.date).getHours().toString().padStart(2,'0')}:${new Date(selected.date).getMinutes().toString().padStart(2,'0')}` : `${new Date().getHours().toString().padStart(2,'0')}:${new Date().getMinutes().toString().padStart(2,'0')}`} />
+                  </div>
+                </h2>
                 <textarea className="flex-1 resize-none mt-[5px] focus:outline-none" placeholder="보낼 메세지를 입력하세요."/>
               </div>
-              <button className="w-[140px] h-[40px] rounded-xl mt-[20px] mb-[20px] self-end mr-[5%] text-white bg-blue-600 font-semibold hover:bg-blue-700 cursor-pointer">메세지 전송</button>
+              <div className="flex justify-between w-[90%]">
+                <button className="w-[140px] h-[40px] rounded-xl mt-[20px] mb-[20px] self-end text-white bg-red-500 hover:bg-red-600 font-semibold hover:bg-blue-700 cursor-pointer">상담 기록 삭제</button>
+                <button className="w-[140px] h-[40px] rounded-xl mt-[20px] mb-[20px] self-end text-white bg-blue-600 font-semibold hover:bg-blue-700 cursor-pointer">메세지 전송</button>
+              </div>
             </div>
           </div>
         </div>
@@ -75,7 +95,8 @@ const dummy = [
     "gender": "남",
     "age": 17,
     "phone": "010-2345-6789",
-    "subject": "수학"
+    "subject": "수학",
+    "date": "2025-12-01T14:30:00.000Z"
   },
   {
     "id": 2,
@@ -85,7 +106,8 @@ const dummy = [
     "gender": "여",
     "age": 19,
     "phone": "010-9876-5432",
-    "subject": "영어"
+    "subject": "영어",
+    "date": "2025-12-02T10:00:00.000Z"
   },
   {
     "id": 3,
@@ -95,7 +117,8 @@ const dummy = [
     "gender": "남",
     "age": 16,
     "phone": "010-1111-2222",
-    "subject": "컴퓨터"
+    "subject": "컴퓨터",
+    "date": "2025-12-03T16:45:00.000Z"
   },
   {
     "id": 4,
@@ -105,7 +128,8 @@ const dummy = [
     "gender": "여",
     "age": 18,
     "phone": "010-3333-4444",
-    "subject": "과학"
+    "subject": "과학",
+    "date": "2025-12-04T11:30:00.000Z"
   },
   {
     "id": 5,
@@ -115,7 +139,8 @@ const dummy = [
     "gender": "남",
     "age": 17,
     "phone": "010-5555-6666",
-    "subject": "국어"
+    "subject": "국어",
+    "date": "2025-12-05T13:00:00.000Z"
   },
   {
     "id": 6,
@@ -125,7 +150,8 @@ const dummy = [
     "gender": "여",
     "age": 18,
     "phone": "010-7777-8888",
-    "subject": "사회"
+    "subject": "사회",
+    "date": "2025-12-06T15:15:00.000Z"
   },
   {
     "id": 7,
@@ -135,7 +161,8 @@ const dummy = [
     "gender": "남",
     "age": 17,
     "phone": "010-9999-0000",
-    "subject": "물리"
+    "subject": "물리",
+    "date": "2025-12-08T10:45:00.000Z"
   },
   {
     "id": 8,
@@ -145,7 +172,8 @@ const dummy = [
     "gender": "남",
     "age": 19,
     "phone": "010-1122-3344",
-    "subject": "논술"
+    "subject": "논술",
+    "date": "2025-12-09T14:00:00.000Z"
   },
   {
     "id": 9,
@@ -155,7 +183,8 @@ const dummy = [
     "gender": "여",
     "age": 20,
     "phone": "010-5566-7788",
-    "subject": "프로그래밍"
+    "subject": "프로그래밍",
+    "date": "2025-12-10T17:00:00.000Z"
   },
   {
     "id": 10,
@@ -165,6 +194,7 @@ const dummy = [
     "gender": "남",
     "age": 16,
     "phone": "010-9988-7766",
-    "subject": "수학"
+    "subject": "수학",
+    "date": "2025-12-01T10:30:00.000Z"
   }
 ]

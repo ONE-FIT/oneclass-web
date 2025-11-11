@@ -104,8 +104,8 @@ export default function TaskGenerate() {
           </div>
           <div className="flex flex-col">
             <div className="flex gap-[20px] text-2xl font-semibold ml-[40px] mb-[10px] mt-[20px]">
-              <h3 onClick={() => setMode("글")} className={`${mode === "글" ? "border-b-3 border-[hsla(210,87%,74%,1)]" : ""} cursor-pointer`}>글</h3>
-              <h3 onClick={() => setMode("사진")} className={`${mode === "사진" ? "border-b-3 border-[hsla(210,87%,74%,1)]" : ""} cursor-pointer`}>사진</h3>
+              <h3 onClick={() => setMode("글")} className={`${mode === "글" ? "border-b-3 border-blue-600" : ""} cursor-pointer`}>글</h3>
+              <h3 onClick={() => setMode("사진")} className={`${mode === "사진" ? "border-b-3 border-blue-600" : ""} cursor-pointer`}>사진</h3>
             </div>
             <div className="h-[250px] flex mb-[20px] mx-[20px]">
               {mode === '사진' ?
@@ -151,7 +151,7 @@ export default function TaskGenerate() {
                     <h4 className="text-sm font-semibold text-center">{startDate.split("-").join(".")}<br/>{startTime}<br/>~<br/>{endDate.split("-").join(".")}<br/>{endTime}</h4>
                   </div>
                 </div>
-                <button className="border border-[hsla(210,87%,74%,1)] rounded-2xl mt-[10px] w-[80%] h-[50px] bg-[hsla(210,87%,74%,1)] text-white cursor-pointer hover:bg-[hsl(210,91.30%,68.40%)]">과제 생성</button>
+                <button className="border border-blue-600 rounded-2xl mt-[10px] w-[80%] h-[50px] bg-blue-600 text-white cursor-pointer hover:bg-blue-700">과제 생성</button>
               </div>
             </div>
           </div>
