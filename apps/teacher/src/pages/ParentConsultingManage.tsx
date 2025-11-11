@@ -58,8 +58,8 @@ export default function ParantConsultingManage() {
                 <h2 className="font-semibold h-[50px] flex items-center text-xl border-b-2 border-gray-300 justify-between">
                   메세지
                   <div className="bg-gray-100 pr-[10px] pl-[10px] rounded-xl flex items-center h-[25px] gap-7">
-                    <input type="date" className="text-sm w-[110px]"/>
-                    <input type="time" className="text-sm w-[105px]"/>
+                    <input type="date" className="text-sm w-[110px]" defaultValue={selected ? new Date(selected.date).toISOString().split('T')[0] : ""}/>
+                    <input type="time" className="text-sm w-[105px]" defaultValue={selected ? `${new Date(selected.date).getHours().toString().padStart(2,'0')}:${new Date(selected.date).getMinutes().toString().padStart(2,'0')}` : ""}/>
                   </div>
                 </h2>
                 <textarea className="flex-1 resize-none mt-[5px] focus:outline-none pb-[15px]" placeholder="보낼 메세지를 입력하세요."/>
