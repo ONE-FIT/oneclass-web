@@ -30,17 +30,7 @@ export default function Filter({filter, setFilter}:filterProps) {
                     <h4 className="inline-block ml-[5px]">내림차순</h4>
                 </div>  
             </div>
-            <div className="w-[90px]">
-                <div>
-                    <div className={`border w-[15px] h-[15px] rounded-3xl inline-block cursor-pointer ${filter.submissionStatus === "submitted" ? "bg-blue-500 border-blue-500" : ""}`} onClick={() => setFilter(prev => ({ ...prev, submissionStatus: "submitted"}))}></div>
-                    <h4 className="inline-block ml-[5px]">제출</h4>
-                </div>
-                <div>
-                    <div className={`border w-[15px] h-[15px] rounded-3xl inline-block cursor-pointer ${filter.submissionStatus === "notSubmitted" ? "bg-blue-500 border-blue-500" : ""}`} onClick={() => setFilter(prev => ({ ...prev, submissionStatus: "notSubmitted"}))}></div>
-                    <h4 className="inline-block ml-[5px]">미제출</h4>
-                </div>  
-            </div>
-            <div className="w-[90px]">
+            <div className="w-[90px] mr-[10%]">
                 <div>
                     <div className={`border w-[15px] h-[15px] rounded-3xl inline-block cursor-pointer ${filter.timeOrder === "recent" ? "bg-blue-500 border-blue-500" : ""}`} onClick={() => setFilter(prev => ({ ...prev, timeOrder: "recent"}))}></div>
                     <h4 className="inline-block ml-[5px]">최근순</h4>
