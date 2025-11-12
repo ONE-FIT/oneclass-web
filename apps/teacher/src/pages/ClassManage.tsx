@@ -9,7 +9,6 @@ type DummyType = {
 }
 
 export default function ClassManage() {
-  const [mode, setMode] = useState<string>("반")
   const [selected, setSelected] = useState<null|DummyType>(null);
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const [modalShow, setModalShow] = useState<boolean>(false);
@@ -24,8 +23,7 @@ export default function ClassManage() {
         <div className="w-full h-[calc(100vh-100px)] flex justify-center items-center flex-col">
           <div className="bg-[hsla(0,0%,100%,1)] w-[95%] h-[90%] rounded-3xl border border-[hsla(0,0%,80%,1)] flex flex-col">
             <div className="h-[80px]  border-b border-[hsla(0,0%,80%,1)] flex justify-center items-center gap-5 text-2xl font-semibold">
-              <span onClick={() => setMode("반")} className={`cursor-pointer ${mode === "반" ? "border-b-3 border-blue-500" : ""}`}>반</span>
-              <span onClick={() => setMode("과목")} className={`cursor-pointer ${mode === "과목" ? "border-b-3 border-blue-500" : ""}`}>과목</span>
+              <span>반</span>
             </div>
             <div className="flex-1 p-5 grid grid-cols-[300px_1fr] grid-rows-[1fr_60px] gap-y-5 overflow-hidden">
               <div className="overflow-y-auto bg-white rounded [&::-webkit-scrollbar]:hidden">

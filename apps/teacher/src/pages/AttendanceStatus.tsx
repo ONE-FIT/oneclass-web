@@ -35,22 +35,12 @@ export default function AttendanceStatus() {
   
     return (
         <div className="bg-[hsla(211,100%,89%,1)] w-full h-screen">
-            <PageHeader title="클래스 설정"/>
+            <PageHeader title="출석 현황"/>
             <div className="w-full h-[calc(100vh-100px)] flex justify-center items-center flex-col">
                 <div className="w-[95%] h-[90%] rounded-3xl flex flex-col gap-5">
-                    <div className="flex items-center w-full h-[100px] gap-[6%] font-semibold rounded-2xl bg-white flex-shrink-0 justify-between">
+                    <div className="flex items-center w-[60%] self-center h-[100px] gap-[6%] font-semibold rounded-2xl bg-white flex-shrink-0 justify-between">
                         <select 
-                            className="border w-[150px] h-[50px] rounded-xl ml-[3%] pl-[10px] focus:outline-none border-gray-300"
-                            value={selectedSubject}
-                            onChange={(e) => setSelectedSubject(e.target.value)}
-                        >
-                            <option>전체</option>
-                            {[...new Set(dummy.map(item => item.subject))].map((subject, idx) => (
-                                <option key={idx}>{subject}</option>
-                            ))}
-                        </select>
-                        <select 
-                            className="border w-[150px] h-[50px] rounded-xl pl-[10px] focus:outline-none border-gray-300"
+                            className="border w-[150px] h-[50px] rounded-xl pl-[10px] focus:outline-none border-gray-300 ml-[3%]"
                             value={selectedClass}
                             onChange={(e) => setSelectedClass(e.target.value)}
                         >
@@ -59,7 +49,7 @@ export default function AttendanceStatus() {
                                 <option key={idx}>{cls}</option>
                             ))}
                         </select>
-                        <div className="flex w-[50%] items-center">
+                        <div className="flex w-[80%] items-center">
                             <h3 className="inline-block text-2xl">학생 이름 : </h3>
                             <input 
                                 placeholder="학생 이름을 입력해 주세요." 
