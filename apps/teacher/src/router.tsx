@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router";
 import Signin from "@/pages/Signin";
-import Home from "@/pages/Home";
 import Dashboard from "@/pages/Dashboard";
 import TaskStatus from "@/pages/TaskStatus";
 import TaskGenerate from "@/pages/TaskGenerate";
@@ -22,18 +21,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/signup",
-    element: <SignUp/>
+    element: <SignUp />,
   },
   {
     path: "/",
     element: <App />,
     children: [
       {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/dashboard",
+        index: true,
         element: <Dashboard />,
       },
       {
