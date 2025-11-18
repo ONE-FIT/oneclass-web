@@ -20,7 +20,7 @@ interface TabItem {
 }
 
 export const tabList: TabItem[] = [
-  { id: "dashboard", name: "대시보드", icon: <DashboardIcon />, to: "/dashboard", section: "main" },
+  { id: "dashboard", name: "대시보드", icon: <DashboardIcon />, to: "/", section: "main" },
   {
     id: "attendance",
     name: "출석 현황",

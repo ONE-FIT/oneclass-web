@@ -3,7 +3,9 @@ import { Link, useLocation } from "react-router";
 
 export default function TabLink({ item }: { item: (typeof tabList)[0] }) {
   const location = useLocation();
-  const isActive = location.pathname.startsWith(item.to);
+  const isActive = item.to === "/"
+    ? location.pathname === "/"
+    : location.pathname.startsWith(item.to);
 
   return (
     <Link
